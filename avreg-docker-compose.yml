@@ -1,0 +1,9 @@
+  version: '3'
+  services:
+   avreg:
+      container_name: avreg-server
+      image: avreg-server:6.3
+      volumes:
+        - /data/avreg:/var/spool/avreg
+      restart: always
+      network_mode: host
