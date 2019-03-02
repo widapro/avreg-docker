@@ -1,9 +1,10 @@
-  version: '3'
-  services:
-   avreg:
-      container_name: avreg-server
-      image: avreg-server:6.3
-      volumes:
-        - /data/avreg:/var/spool/avreg
-      restart: always
-      network_mode: host
+version: '3.3'
+services:
+ avreg:
+    container_name: avreg-server
+    image: avreg-server:latest
+    restart: always
+    volumes:
+      - /data/avreg:/var/spool/avreg
+      - /data/avreg-db:/var/lib/mysql:rw
+    network_mode: host
