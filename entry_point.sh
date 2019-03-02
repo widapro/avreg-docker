@@ -23,6 +23,9 @@ service apache2 stop
 service mysql stop
 service memcached stop
 
+#change owner for mysql docker volume
+chown -R mysql:mysql /var/lib/mysql
+
 service mysql start
 service apache2 start
 service avreg start
